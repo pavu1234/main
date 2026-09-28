@@ -1,0 +1,3 @@
+export type Scan={id:string;target:string;status:string;created_at:string;completed_at:string|null;security_score:number;duration:number;pages_scanned:number;requests_sent:number;error?:string|null};
+export type Finding={id:string;scan_id:string;title:string;severity:'CRITICAL'|'HIGH'|'MEDIUM'|'LOW'|'INFO';confidence:string;category:string;url:string;parameter?:string|null;method:string;description:string;evidence:string;impact:string;detection:string;recommendation:string;owasp?:string|null;cwe?:string|null;status:string;reviewer_note:string};
+export type Page={id:number;url:string;status_code:number;method:string;content_type:string;response_time:number;response_size:number;title:string;depth:number};

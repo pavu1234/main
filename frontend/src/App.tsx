@@ -1,0 +1,2 @@
+import {Routes,Route} from 'react-router-dom'; import Layout from './components/Layout'; import NewScan from './pages/NewScan'; import ScanResults from './pages/ScanResults'; import History from './pages/History'; import Compare from './pages/Compare';
+export default function App(){return <Routes><Route element={<Layout/>}><Route path="/" element={<NewScan/>}/><Route path="/scans/:id" element={<ScanResults/>}/><Route path="/history" element={<History/>}/><Route path="/compare" element={<Compare/>}/></Route></Routes>}

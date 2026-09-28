@@ -1,0 +1,25 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: sqlite:////data/webguard.db
+      FRONTEND_ORIGIN: http://localhost:5173
+      DEMO_LAB_URL: http://security-lab:9000
+    volumes:
+      - webguard-data:/data
+    ports:
+      - "8000:8000"
+    depends_on:
+      - security-lab
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+  security-lab:
+    build: ./security-lab
+    expose:
+      - "9000"
+volumes:
+  webguard-data:
